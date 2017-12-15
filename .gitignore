@@ -1,0 +1,16 @@
+# directories
+node_modules
+tmp
+
+# files
+*.css
+assets/js/*.js
+
+# generic files
+.DS_Store
+.npm-debug.log
+.sass-cache
+**/*.js.map
+**/*.css.map
+.jshintignore
+.jscsrc
