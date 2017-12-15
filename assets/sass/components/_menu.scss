@@ -1,0 +1,125 @@
+/************************
+* Menu component styles *
+************************/
+
+.menu {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 60px;
+    font-weight: 300;
+    text-transform: none;
+    text-align: center;
+    height: 90vh;
+    background-color: $grey-light;
+
+    &__container {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 75px;
+        // background-color: $black;
+        opacity: 0;
+        transform: translateY(10%), scale(0.8);
+        z-index: 5;
+    }
+
+    &__menu-item {
+        padding: 16px 0px;
+        font-size: 24px;
+        // color: $white;
+        opacity: 0;
+        a {
+            color: $grey-link-text;
+        }
+    }
+
+}
+
+/****************
+/****************
+* Media queries *
+****************/
+
+@include tablet() {
+
+    .menu {
+        padding-top: 120px;
+
+        &__menu-item {
+            padding: 26px 0px;
+            font-size: 36px;
+
+        }
+        &__container {
+            margin-top: 112px;
+        }
+
+    }
+
+}
+
+@include desktop() {
+
+    .menu {
+        width: 100%;
+        flex-flow: row;
+        justify-content: space-between;
+        padding-top: 0;
+        height: auto;
+        background-color: $purple;
+
+
+        &__container {
+            position: static;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            top: 0;
+            margin-top: 0px;
+            padding: 0px;
+            background-color: inherit;
+            opacity: 1;
+            transform: translateY(0), scale(1);
+        }
+
+        &__menu-item {
+            position: relative;
+            margin: 0px;
+            padding: 5px 0px;
+            font-size: 18px;
+            color: $black;
+            opacity: 1;
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $black;
+                transform: scaleY(0);
+                transition: 0.2s ease-out;
+            }
+
+            &:hover {
+
+                &:after {
+                    transform: scaleY(1);
+                }
+
+            }
+            a {
+                color: $white;
+            }
+
+        }
+
+    }
+
+}

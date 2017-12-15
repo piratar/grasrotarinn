@@ -1,0 +1,114 @@
+//Admin bar
+#wpadminbar {
+    background-color: $purple !important;
+    color: $white;
+}
+//Adming menu on left side
+#adminmenuback, #adminmenu, #adminmenuwrap {
+    background: $black;
+}
+
+#wpcontent {
+    padding: 40px !important;
+}
+//Body
+#wpbody {
+    background-color: $white;
+    padding: 10px;
+
+}
+.wp-list-table {
+    thead {
+        background-color: $purple;
+        th {
+            color: $white !important;
+            border-left: 1px solid $white;
+            a {
+                color: $white !important;
+
+            }
+        }
+    }
+    tfoot {
+        display: none;
+    }
+}
+.acf-postbox {
+    padding-top: 25px;
+}
+#the-list {
+    td {
+        a {
+            color: $black !important;
+
+        }
+    }
+}
+.subsubsub {
+    display: none;
+}
+.wp-heading-inline {
+    font-weight: bold !important;
+    padding: 10px !important;
+    margin-bottom: 20px !important;
+}
+// Publish and update button
+#publish {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0px !important;
+    width: 130px;
+    height: 36px;
+    border: none !important;
+    border-color: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    @include cta-green();
+}
+//Add new button
+.page-title-action {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0px !important;
+    width: 130px;
+    height: 36px;
+    border: none !important;
+    border-color: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    @include cta-green();
+    background-color: $green-light !important;
+    color: $white !important;
+    border-radius: 10px !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+}
+
+#poststuff {
+    background-color: $grey !important;
+    padding: 0px !important;
+}
+#post-body-content {
+    margin-bottom: 0px !important;
+
+    .edit-form-section {
+        margin-bottom: 0px !important;
+    }
+}
+#titlediv {
+    #title {
+        margin: 0px !important;
+    }
+    .inside {
+        // display: none;
+        background-color: $white;
+    }
+}
+//Sortable arrow
+.sorting-indicator {
+    &:before {
+        color: #fff !important;
+    }
+}

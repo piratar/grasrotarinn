@@ -1,0 +1,12 @@
+<section class="hero-section js-hero-section-background">
+    <img src="{{ TimberImage(post.get_field('hero_background_image')).src }}" class="js-hero-image" alt="">
+    <div class="hero-section__title">
+        {{ post.get_field( 'hero_title' ) }}
+    </div>
+    <div class="hero-section__subtitle">
+        {{ active_tasks }}  verkefni í boði
+    </div>
+    <div class="hero-section__cta">
+        {% include 'cta.twig'  with { 'modifier' : 'homepage-purple js-filter-scroll', 'link' : '#task-list', 'label' : 'Skoða verkefni'  }%}
+    </div>
+</section>

@@ -1,0 +1,40 @@
+/**************
+* Font styles *
+**************/
+
+@mixin font-style( $family, $size, $weight, $color: $text-black, $line-h: 1.4, $serif: false ) {
+    @if $serif { font-family: $family, serif; }
+    @else { font-family: $family, sans-serif; }
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    line-height: $line-h;
+}
+
+@mixin h1 {
+    @include font-style( $main-family, 48px, 700 );
+}
+
+@mixin h2 {
+    @include font-style( $main-family, 36px, 700 );
+}
+
+@mixin h3 {
+    @include font-style( $main-family, 24px, 700 );
+}
+
+@mixin h4 {
+    @include font-style( $main-family, 18px, 700 );
+}
+
+@mixin h5 {
+    @include font-style( $main-family, 24px, 700 );
+}
+
+@mixin h6 {
+    @include font-style( $main-family, 18px, 700 );
+}
+
+@mixin body-copy {
+    @include font-style( $main-family, 16px, 400 );
+}

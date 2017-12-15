@@ -1,0 +1,13 @@
+.task-filter {
+    width: 90%;
+    margin: 0 auto;
+    padding: 33px 0px;
+}
+
+@include tablet() {
+
+    .task-filter {
+        padding: 60px 88px 0px;
+        width: 100%;
+    }
+}

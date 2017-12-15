@@ -1,0 +1,25 @@
+<div class="mobile-header-bar">
+
+    <!-- <div class="mobile-header-bar__user js-login-register-section">
+        <div class="mobile-header-bar__login-link">
+            <a class="js-login-button">Innskrá</a>
+        </div>
+        <div class="mobile-header-bar__register">
+            <a class="js-register-button">Nýskrá</a>
+        </div>
+    </div> -->
+    {% include 'login-register-bar.twig' %}
+
+    <div class="mobile-header-bar__socials">
+        <a href="https://www.facebook.com/">
+            <img src="{{ theme.link }}/assets/img/facebook-mobile-menu.png" class="mobile-header-bar__social-icon"alt="Facebook Icon">
+        </a>
+        <a href="https://www.instagram.com/">
+            <img src="{{ theme.link }}/assets/img/insta-mobile-menu.png" class="mobile-header-bar__social-icon"alt="Instagram Icon">
+        </a>
+        <a href="https://twitter.com/">
+            <img src="{{ theme.link }}/assets/img/twitter-mobile-menu.png" class="mobile-header-bar__social-icon" alt="Twitter Icon">
+        </a>
+    </div>
+
+</div>

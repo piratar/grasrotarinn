@@ -1,0 +1,17 @@
+<div class="login js-login">
+    <h3 class="login-register__title">Innskráning</h3>
+    <form id="login" action="" method="post" class="login-register__form js-login-form" >
+        <div class="js-login-message"></div>
+        <label class="login-register__label" for="username">Sláðu inn netfang</label>
+        <input id="username" class="login-register__input" type="text" name="username" value="">
+        <label class="login-register__label" for="password">Sláðu inn lykilorð</label>
+        <input id="password" class="login-register__input" type="password" name="password" value="">
+        <div id="recaptcha-login" class="g-recaptcha"
+            data-sitekey="6LftfzUUAAAAAGBIGW2id_IJQdioa-l60b1cL7C0"
+            data-callback="onLoginRecaptchaSubmit"
+            data-expired-callback="onLoginRecaptchaExpired">
+        </div>
+        <input type="submit" value="Innskrá" class="login-register__submit  js-login-submit">
+        <div><a class="login-register__login-link js-go-to-register">Nýskráning</a></div>
+    </form>
+</div>

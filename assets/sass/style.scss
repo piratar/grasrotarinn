@@ -1,0 +1,50 @@
+/*!
+Theme Name: VolunteerWeb
+Theme URI: http://test.yes/
+Author: WebMo design
+Author URI: http://webmodesign.is/
+Description: VolunteerWeb company custom Wordpress theme
+Version: 1.0.0
+Text Domain: volunteerweb
+Tags:
+
+VolunteerWeb Theme is based on Timber framework http://timber.github.io/timber/.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/,
+and Eric Meyer http://meyerweb.com/eric/tools/css/reset/.
+*/
+
+@import
+// General styles
+"reset",
+"screen-reader",
+"colors",
+"font-families",
+"font-styles",
+"layout-mixins",
+"elements-mixins",
+"media-mixins",
+"global-styles",
+
+// Module styles here
+"components/cta",
+"components/footer",
+"components/header",
+"components/menu",
+"components/hero-section",
+"components/header-bar",
+"components/hero-info-section",
+"components/mobile-header-bar",
+"components/task-filter",
+"components/filter-bar",
+"components/filter-list",
+"components/filter-category",
+"components/filter",
+"components/task-list",
+"components/task",
+"components/single-task",
+"components/infopage",
+"components/login-register",
+"components/my-profile-form",
+"components/my-profile";

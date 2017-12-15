@@ -1,0 +1,153 @@
+.header-bar {
+    display: none;
+    &__login-link {
+        padding: 0px 0px 32px;
+        font-size: 24px;
+    }
+    &__logout {
+        padding: 32px 0px 50px;
+        font-size: 24px;
+    }
+    &__register {
+        padding: 0px 0px 50px;
+        font-size: 24px;
+    }
+
+}
+
+@include tablet() {
+    .header-bar {
+        justify-content: space-between;
+        &__login-link {
+            padding: 0px 0px 52px;
+            font-size: 36px;
+        }
+        &__logout {
+            padding: 32px 0px 50px;
+            font-size: 36px;
+        }
+        &__register {
+            padding: 0px 0px 50px;
+            font-size: 36px;
+        }
+
+    }
+
+}
+@include desktop() {
+    .login-border-right {
+        border-right: 2px solid $white;
+        // padding-right: 10px;
+        height: 16px;
+    }
+    .header-bar {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        padding: 0px 88px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 42px;
+        background-color: $header-bar-bg;
+        &__socials {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 102px;
+            width: 100%;
+            height: auto;
+            a {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        &__social-icon {
+            width: 22px;
+            height: 22px;
+        }
+        &__user {
+            max-width: 350px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: $white;
+
+        }
+        &__user-info {
+            display: flex;
+            margin-right: 20px;
+            align-items: center;
+            font-size: 12px;
+
+        }
+        &__user-link {
+            margin: 0px 17px 0px 15px;
+            font-size: 12px;
+            cursor: pointer;
+
+        }
+        &__login-icon {
+            display: inline-block;
+                // font-family: $font-awesome;
+            margin: 0px 0px 0px 32px;
+            img {
+                width: 14px;
+                height: auto;
+            }
+
+        }
+        &__logout {
+            margin-left: 16px;
+            padding: 0px;
+            font-size: 12px;
+            cursor: pointer;
+
+        }
+        &__login-wrapper {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: 12px;
+        }
+        &__login-link {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            padding: 0px;
+            font-size: 12px;
+            cursor: pointer;
+
+            a {
+                margin-left: 16px;
+            }
+
+        }
+        &__register {
+            margin-left: 10px;
+            padding: 0px;
+            font-size: 12px;
+            cursor: pointer;
+
+
+        }
+
+        &__register {
+            margin-left: 10px;
+        }
+        &__login-link {
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+
+    }
+}
+
+@include desktop-lg() {
+    .header-bar {
+
+    }
+}

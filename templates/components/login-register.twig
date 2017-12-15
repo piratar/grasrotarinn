@@ -1,0 +1,8 @@
+<div class="login-register__overlay js-login-register-overlay">
+    {% set user = function( 'is_user_logged_in' ) %}
+    <div class="login-register js-login-register">
+        <span class="login-register__close js-login-register-close"></span>
+        {% include 'login.twig' %}
+        {% include 'register.twig' %}
+    </div>
+</div>

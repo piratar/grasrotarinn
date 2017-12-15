@@ -1,0 +1,10 @@
+<section class="hero-info">
+    <div class="hero-info__left js-about-background">
+        <img src="{{ TimberImage(post.hero_info_image).src }}" alt="" class="js-about-image">
+    </div>
+    <div class="hero-info__right">
+        <div class="hero-info__title"> {{ post.get_field( 'hero_info_title' ) }} </div>
+        <div class="hero-info__subtitle"> {{ post.get_field( 'hero_info_subtitle' ) }} </div>
+        <div class="hero-info__content content">  {{ post.get_field( 'hero_info_content' ) }} </div>
+    </div>
+</section>

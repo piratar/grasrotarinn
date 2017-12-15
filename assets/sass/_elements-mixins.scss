@@ -1,0 +1,109 @@
+/******************
+* Elements mixins *
+******************/
+
+// Base element mixin
+@mixin elem( $family: $main-family, $size: 16px, $weight: 400, $color: $white, $display: inline, $padding: 20px 40px, $bg-color: $white, $border: false, $radius: false ) {
+    @include font-style( $family, $size, $weight, $color );
+    display: $display;
+    padding: $padding;
+    color: $color;
+    background-color: $bg-color;
+    @if $border { border: $border; }
+    @if $radius { border-radius: $radius; }
+}
+
+@mixin cta-white {
+    @include elem( $main-family, 16px );
+}
+
+@mixin cta-purple {
+    @include elem( $main-family, 18px, 300, $white, inline, 16px 0px, $purple-light, 0px, 10px );
+    outline: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover:not([disabled]) {
+        background-color: $purple;
+    }
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+
+@mixin cta-grey {
+    @include elem( $main-family, 18px, 300, $black, inline, 16px 0px, $grey-light, 0px, 10px );
+    outline: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover:not([disabled]) {
+        background-color: $grey-light-hover;
+    }
+    
+
+    &.with-chevron {
+        &:after {
+            content: '\f077';
+            display: inline-block;
+            margin-left: 30px;
+            font-family: $font-awesome;
+            transition: 0.3s ease-out;
+            transform: rotate(0);
+        }
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+
+@mixin cta-black {
+    @include elem( $main-family, 18px, 300, $white, inline, 16px 0px, $black-light, 0px, 10px );
+    outline: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover:not([disabled]) {
+        background-color: $black;
+    }
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+@mixin cta-green {
+    @include elem( $main-family, 18px, 300, $white, inline, 16px 0px, $green-light, 0px, 10px );
+    outline: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover:not([disabled]) {
+        background-color: $green;
+    }
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+@mixin cta-blue {
+    @include elem( $main-family, 18px, 300, $white, inline, 16px 0px, $blue-light, 0px, 10px );
+    outline: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover:not([disabled]) {
+        background-color: $blue;
+    }
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+// Text links
+@mixin link {
+    @include font-style( $secondary-family, 16px, 400, $text-link );
+    text-decoration: none;
+    transition: 0.2s ease-out;
+
+    &:hover {
+        color: $text-black;
+    }
+}
+
+// Form elements
+@mixin input-text {
+    @include elem();
+}

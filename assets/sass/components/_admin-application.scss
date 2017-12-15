@@ -1,0 +1,46 @@
+.application {
+    &__status-wrapper {
+        display: flex !important;
+        align-items: center;
+    }
+    &__user-data {
+        display: flex;
+    }
+    &__user-label {
+
+    }
+    &__user-info {
+        font-weight: bold;
+        margin-left: 5px;
+
+    }
+    &__approve {
+        @include cta-green();
+        width: 200px;
+    }
+    &__decline {
+        @include cta-black();
+        width: 200px;
+    }
+    &__pending {
+        @include cta-purple();
+        width: 200px;
+    }
+    &__radio-hidden {
+        display: none !important;
+    }
+    &__status {
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+        font-size: 24px;
+    }
+    &__current-status {
+        display: inline-flex;
+        margin-left: 5px;
+        font-weight: bold;
+        color: $purple-dark;
+        font-size: 24px;
+
+    }
+}

@@ -1,0 +1,18 @@
+<form class="task__why-me" action="" method="post" id="apply-form" data-taskid={{ post.ID }}>
+    <h3 class="task__why-me-title">Af hverju ég</h3>
+    <div class="js-apply-error hidden"></div>
+    <div class="thank-you-message js-thank-you-message hidden">
+        Thank you! You successfully applied for this task.
+    </div>
+    <div class="js-form-fields hidden">
+        <textarea class="task__why-me-textarea" name="whyme" id="" cols="30" rows="10"></textarea>
+        <input type="number" name="task_id" value="{{ post.ID }}" hidden>
+        <div id="recaptcha-apply" class="g-recaptcha apply-recaptcha"
+            data-sitekey="6LftfzUUAAAAAGBIGW2id_IJQdioa-l60b1cL7C0"
+            data-callback="onApplyRecaptchaSubmit"
+            data-expired-callback="onApplyRecaptchaExpired">
+        </div>
+        <input type="submit" value="Sækja um" class="js-apply-form-submit task__why-me-button">
+        <div class="js-sign-in-info hidden"></div>
+    </div>
+</form>

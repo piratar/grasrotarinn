@@ -1,0 +1,25 @@
+<div class="register js-register">
+    <!-- <h3 class="login-register__title">Innskráning</h3> -->
+    <form id="register" action="" method="post" class="login-register__form js-register-form" >
+        <div class="js-register-message"></div>
+        <label class="login-register__label" for="username">Notendanafn</label>
+        <input id="username" class="login-register__input" type="text" name="username" value="">
+        <label class="login-register__label" for="email">Netfang</label>
+        <input id="email" class="login-register__input" type="email" name="email" value="">
+        <label class="login-register__label" for="password">Lykilorð</label>
+        <input id="password" class="login-register__input" type="password" name="password" value="">
+        <label class="login-register__label" for="fullname">Nafn</label>
+        <input id="fullname" class="login-register__input" type="text" name="fullname" value="">
+        <label class="login-register__label" for="phone">Símanúmer</label>
+        <input id="phone" class="login-register__input" type="number" name="phone" value="">
+        <label class="login-register__label" for="aboutme">Um mig</label>
+        <textarea name="aboutme" id="aboutme" cols="30" rows="3">nhwlhknwr</textarea>
+        <div id="recaptcha-register" class="g-recaptcha"
+            data-sitekey="6LftfzUUAAAAAGBIGW2id_IJQdioa-l60b1cL7C0"
+            data-callback="onRegisterRecaptchaSubmit"
+            data-expired-callback="onRegisterRecaptchaExpired">
+        </div>
+        <input type="submit" value="Nýskrá" class="login-register__submit js-register-submit">
+        <div class=""><a class="login-register__login-link js-go-to-login">Innskráning</a></div>
+    </form>
+</div>

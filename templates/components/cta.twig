@@ -1,0 +1,9 @@
+<!--
+* Call to Action component
+*
+* Config variables:
+* @var {String} label - text to show inside CTA button
+* @var {String} link - url for CTA click
+* @var {String} modifier - text to be added to cta css modifier class
+-->
+<a class="cta {% if modifier %}cta--{{ modifier }}{% endif %}" href="{{ link }}">{{ label }}</a>

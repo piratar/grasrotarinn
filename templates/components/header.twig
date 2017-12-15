@@ -1,0 +1,21 @@
+<header class="header">
+    {% include 'header-bar.twig' %}
+    <div class="header__site-branding">
+        <h1 class="hdr-logo" role="banner">
+            <a class="hdr-logo-link" href="{{site.url}}" rel="home">
+                    <span class="gras">Gras</span><span class="rotarin">Rótarinn<span>
+            </a>
+        </h1>
+    </div>
+    <nav id="nav-main" class="nav-main header__navigation" role="navigation">
+        <button class="header__menu-button js-menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+            <span class="header__menu-toggle-button js-hamburger-lines"></span>
+        </button>
+        <div class="menu__container js-menu-container">
+            {% include "menu.twig" with {'menu': menu.get_items, 'has_children' : true } %}
+        </div>
+    </nav><!-- #nav -->
+    <!-- Login / Registration form -->
+    {% include 'login-register.twig' %}
+    <!-- END Login / Registration form -->
+</header>

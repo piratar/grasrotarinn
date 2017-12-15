@@ -1,0 +1,121 @@
+
+.hero-info {
+    display: flex;
+    background-color: $homepage-about-grey;
+    flex-flow: column-reverse;
+    font-family: $main-family;
+
+    &__left {
+        @include bgImage();
+        background-size: contain;
+        background-position: bottom;
+        width: 100%;
+        height: 260px;
+        margin-bottom: 0px;
+    }
+    &__right {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        padding: 0px 22px;
+
+    }
+    &__title {
+        width: 100%;
+        margin-top: 45px;
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: $purple;
+
+    }
+    &__subtitle {
+        margin-bottom: 32px;
+        padding: 0px 8px;
+        font-size: 18px;
+        text-align: center;
+        color: $black;
+
+    }
+    &__content {
+        margin-bottom: 20px;
+        font-size: 16px;
+        text-align: center;
+        color: $grey-content;
+
+    }
+
+
+}
+@include tablet() {
+    .hero-info {
+        display: flex;
+        padding: 0px 134px;
+    }
+    &__title {
+        width: 100%;
+        margin-bottom: 24px;
+        font-size: 36px;
+        line-height: 0.83;
+
+    }
+    &__subtitle {
+        margin-bottom: 25px;
+        font-size: 24px;
+        line-height: 1.25;
+        color: $text-gray;
+
+    }
+    &__content {
+        margin-bottom: 0px;
+        font-size: 18px;
+        line-height: 1.83;
+        color: $text-gray;
+
+    }
+}
+@include desktop() {
+    .hero-info {
+        flex-flow: row;
+        max-height: 460px;
+        padding: 70px 88px 0px;
+        &__left {
+            @include bgImage();
+            background-size: contain;
+            background-position: bottom;
+            max-width: 570px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 0px;
+
+        }
+        &__right {
+            padding: 0px 0px 0px 70px;
+
+        }
+        &__title {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 48px;
+            text-align: left;
+
+        }
+        &__subtitle {
+            width: 100%;
+            font-size: 24px;
+            margin-bottom: 24px;
+            text-align: left;
+
+        }
+        &__content {
+            font-size: 16px;
+            margin-bottom: 108px;
+            text-align: left;
+
+        }
+    }
+}

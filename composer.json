@@ -1,0 +1,7 @@
+{
+    "name": "volunteerweb/volunteerweb",
+    "description": "Custom WP Theme",
+    "require": {
+        "firebase/php-jwt": "^5.0"
+    }
+}

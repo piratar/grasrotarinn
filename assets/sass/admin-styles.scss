@@ -1,0 +1,16 @@
+/*************************
+* Wp Admin custom styles *
+*************************/
+
+@import
+// General styles
+"colors",
+"font-families",
+"font-styles",
+"layout-mixins",
+"elements-mixins",
+
+// Module styles here
+"components/admin-application",
+"components/admin-divisions",
+"components/admin-tasks";

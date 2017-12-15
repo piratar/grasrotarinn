@@ -1,0 +1,12 @@
+/****************
+* Font families *
+****************/
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('assets/fonts/fontawesome-webfont.woff') format('woff');
+}
+
+$main-family:       'Montserrat';
+$secondary-family:  'sans-serif';
+$font-awesome:      'FontAwesome'

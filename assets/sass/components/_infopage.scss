@@ -1,0 +1,122 @@
+.infopage {
+    padding: 20px;
+    background-color: $grey-light;
+    font-family: $main-family;
+    &__wrapper {
+        padding: 26px 20px;
+        background-color: $white;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 60px;
+    }
+        &__content {
+             font-size: 16px;
+             h1 {
+                 font-size: 24px;
+                 font-weight: bold;
+                 margin: 22px 0px;
+             }
+             h2 {
+                 font-size: 20px;
+                 font-weight: bold;
+                 margin: 22px 0px;
+             }
+             h3 {
+                 font-size: 18px;
+                 font-weight: bold;
+                 margin: 22px 0px;
+             }
+             h4 {
+                 font-size: 16px;
+                 font-weight: bold;
+                 margin: 18px 0px;
+             }
+             h5 {
+                 font-size: 16px;
+                 font-weight: bold;
+                 margin: 18px 0px;
+
+             }
+             ul {
+                 li {
+                     list-style-type: disc;
+                     margin-left: 20px;
+                 }
+             }
+             ol {
+                 li {
+                     list-style-type: decimal;
+                     margin-left: 20px;
+                 }
+             }
+             em {
+                 font-style: italic;
+             }
+             a {
+                 text-decoration: underline;
+                 color: $purple;
+                 &:hover {
+                     color: $purple-light;
+                 }
+             }
+         }
+}
+@include tablet() {
+    .infopage {
+        padding: 40px;
+        &__wrapper {
+            padding: 40px;
+
+        }
+        &__title {
+          font-size: 32px;
+        }
+    }
+}
+@include desktop() {
+    .infopage {
+        padding: 40px 80px;
+        &__wrapper {
+            padding: 50px 38px;
+
+        }
+        &__title {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 60px;
+        }
+        &__content {
+             font-size: 16px;
+             h1 {
+                 font-size: 32px;
+                 font-weight: bold;
+                 margin: 32px 0px;
+             }
+             h2 {
+                 font-size: 28px;
+                 font-weight: bold;
+                 margin: 32px 0px;
+             }
+             h3 {
+                 font-size: 24px;
+                 font-weight: bold;
+                 margin: 32px 0px;
+             }
+             h4 {
+                 font-size: 20px;
+                 font-weight: bold;
+                 margin: 28px 0px;
+             }
+             h5 {
+                 font-size: 18px;
+                 font-weight: bold;
+                 margin: 28px 0px;
+
+             }
+        }
+    }
+}

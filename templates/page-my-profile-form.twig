@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<form enctype="multipart/form-data" action="{{  fn( 'admin_url', 'admin-post.php' ) | e('esc_html')   }}" method="post" class="my-profile-form">
+    <div class="my-profile-form__wrapper">
+        <div class="my-profile-form__info">
+            <div class="my-profile-form__image">
+                <!--  HEre is image upload TODO -->
+                    <!-- <img src="{{ current_user.profile_image }} " alt="User profile image" class="my-profile-form__profile-img">
+                    <input type="file" name="uploaded_file" id="fileToUpload"> -->
+                      <img src="{{ theme.path }}/assets/img/profile-pic.jpg" >
+
+            </div>
+            <div class="my-profile-form__main-info">
+                <p class="my-profile-form__span-name">Name: </p>
+                <input type="text" name="fullname" class="my-profile-form__name my-profile-form__name-field" value=" {{ current_user.display_name }} ">
+
+                <div class="my-profile-form__email">
+                    <p class="my-profile-form__required">Netfang: &nbsp</p>
+                    <input type="text" name="email" class="my-profile-form__answer" value=" {{ current_user.user_email }} ">
+                </div>
+                <div class="my-profile-form__phone">
+                    <p class="my-profile-form__required">Símanúmer: &nbsp</p>
+                        <input id="profile-phone" type="text" name="phone" maxlength="7" pattern="\d*" class="my-profile-form__answer" value="{{ current_user.phone_number | number_format (0, '', '') }}">
+                </div>
+            </div>
+        </div>
+        <div class="my-profile-form__description">
+            <p class="my-profile-form__about-me-titile">Um mig</p>
+            <p class="my-profile-form__about-me">
+
+            </p>
+            <textarea name="description" rows="8" cols="80"> {{ current_user.description }} </textarea>
+            <!-- <p class="my-profile-form__change-info"><a href="{{ site.url }}/my-profile-form?$eidt_user=true">Breyta upplýsingum</a></p> -->
+            <input type="hidden" name="action" value="volunteer_update">
+            <input type="submit" name="submit" class="my-profile-form__submit">
+        </div>
+    </div>
+</form>
+
+{% endblock %}

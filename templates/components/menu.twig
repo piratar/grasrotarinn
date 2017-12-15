@@ -1,0 +1,24 @@
+{% if menu %}
+{% if has_children == true %}
+	<ul id="primary-menu" class="menu">
+	{% for item in menu %}
+		<li class="menu__menu-item js-menu-item {{item.classes | join(' ')}}">
+			<a href="{{item.get_link}}">{{item.title}}</a>
+			{% include "menu.twig" with {'menu': item.get_children } %}
+
+
+		</li>
+	{% endfor %}
+	{% include "mobile-header-bar.twig" %}
+	</ul>
+	{% else %}
+	<ul id="footer-menu" class="vw-footer__footer-menu">
+	{% for item in menu %}
+		<li class="vw-footer__menu-item js-menu-item {{item.classes | join(' ')}}">
+			<a href="{{item.get_link}}">{{item.title}}</a>
+			{% include "menu.twig" with {'menu': item.get_items } %}
+		</li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+{% endif %}

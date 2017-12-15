@@ -1,0 +1,38 @@
+.cta {
+    position: relative;
+    text-transform: none;
+    color: $white;
+    transition: all 0.3s ease-out;
+
+    // Modifiers
+    &--homepage-purple {
+        @include centerElements();
+        width: 280px;
+        height: 52px;
+        border-radius: 8px;
+        background-color: $purple-cta;
+        font-family: $main-family;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+@include tablet() {
+    .cta {
+            // Modifiers
+        &--homepage-purple {
+            @include centerElements();
+            width: 344px;
+        }
+    }
+}
+@include desktop() {
+    .cta {
+        // Modifiers
+        &--homepage-purple {
+            width: 344px;
+            height: 52px;
+        }
+    }
+
+}

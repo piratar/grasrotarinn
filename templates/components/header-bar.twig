@@ -1,0 +1,14 @@
+<div class="header-bar {% if modifier %}header-bar--{{ modifier }}{%  endif %}">
+    <div class="header-bar__socials">
+        <a href="https://www.facebook.com/Piratar.Island/">
+            <img src="{{ theme.link }}/assets/img/facebook.svg" class="header-bar__social-icon"alt="Facebook Icon">
+        </a>
+        <a href="https://www.instagram.com/piratar/">
+            <img src="{{ theme.link }}/assets/img/instagram.svg" class="header-bar__social-icon"alt="Instagram Icon">
+        </a>
+        <a href="https://twitter.com/piratepartyis">
+            <img src="{{ theme.link }}/assets/img/twitter.svg" class="header-bar__social-icon" alt="Twitter Icon">
+        </a>
+    </div>
+    {% include 'login-register-bar.twig' %}
+</div>

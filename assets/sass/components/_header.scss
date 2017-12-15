@@ -1,0 +1,195 @@
+/*******************************
+* Styles for the header module *
+*******************************/
+.gras {
+     font-weight: bold;
+}
+.rotarin {
+    font-weight: 100;
+}
+.no-scroll {
+    position: fixed;
+}
+.cta-grey {
+@include cta-grey();
+    }
+.cta-purple {
+// @include cta-purple();
+}
+.cta-black {
+@include cta-black();
+
+}
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px 20px;
+    height: 88px;
+    margin-top:0px;
+    background: $navigation-bg;
+    font-family: $main-family;
+    &__site-branding {
+        max-height: 88px;
+        display: flex;
+        align-items: center;
+        flex: 0 0 40%;
+        color: $white;
+        h1 {
+            font-size: 24px;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 0 0 55%;
+        // margin-top: 40px;
+        // justify-content: flex-end;
+    }
+
+    &__menu-button {
+        position: relative;
+        float: right;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 0px;
+        background-color: transparent;
+        outline: none;
+        display: flex;
+    }
+
+    &__menu-toggle-button {
+        @include centerXY();
+        position: relative;
+        display: inline-block;
+        padding: 0px;
+        width: 36px;
+        height: 6px;
+        background-color: $white;
+        border: 0px;
+        border-radius: 2px;
+        z-index: 10;
+        outline: none;
+        transition: 0.2s ease-out;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 36px;
+            height: 6px;
+            background-color: $white;
+            border-radius: 2px;
+            transition: 0.2s ease-out;
+        }
+
+        &:before {
+            top: -10px;
+        }
+
+        &:after {
+            bottom: -10px;
+        }
+
+        // Additional class for animation purpose
+        &.is-open {
+            background-color: transparent;
+
+            &:before {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+
+            &:after {
+                bottom: 0;
+                transform: rotate(45deg);
+            }
+
+        }
+
+    } // &__menu-toggle-button
+
+}
+
+/****************
+* Media queries *
+****************/
+
+@include tablet() {
+    .header {
+        height: 112px;
+        padding: 0 40px;
+        justify-content: space-between;
+
+        &__site-branding {
+            h1 {
+                font-size: 40px;
+            }
+        }
+        &__menu-button {
+            width: 72px;
+            top: 5px;
+        }
+        &__menu-toggle-button {
+            width: 58px;
+            height: 10px;
+            border-radius: 5px;
+
+            &:before,
+            &:after {
+                width: 58px;
+                height: 10px;
+                border-radius: 5px;
+            }
+            &:before {
+                top: -20px;
+            }
+
+            &:after {
+                bottom: -20px;
+            }
+        }
+
+    }
+
+}
+
+@include desktop() {
+
+    .header {
+        height: 70px;
+        margin-top: 40px;
+        justify-content: space-between;
+        padding: 5px 88px;
+        &__site-branding {
+            max-width: 200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            // flex: 0 0 40%;
+            color: $white;
+            h1 {
+                font-size: 30px;
+            }
+        }
+        &__menu-button {
+            display: none;
+        }
+        &__navigation {
+            flex: 0 0 40%;
+        }
+
+    }
+
+}

@@ -1,0 +1,53 @@
+.hero-section {
+    width: 100%;
+    height: 90vh;
+    @include centerElements();
+    flex-flow: column;
+    @include bgImage();
+    font-family: $main-family;
+    color: $white;
+    &__title {
+        width: 100%;
+        padding: 0% 5%;
+        margin-bottom: 40px;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__subtitle {
+        width: 100%;
+        padding: 0% 5%;
+        margin-bottom: 95px;
+        font-size: 24px;
+        text-align: center;
+    }
+    &__cta {
+        z-index: 2;
+    }
+}
+@include tablet() {
+    .hero-section {
+        max-height: 500px;
+        &__title {
+            font-size: 60px;
+        }
+        &__subtitle {
+            margin-bottom: 60px;
+            font-size: 36px;
+
+        }
+    }
+}
+@include desktop() {
+    .hero-section {
+        max-height: 500px;
+        &__title {
+            margin-bottom: 16px;
+        }
+    }
+}
+@include desktop-lg() {
+    .hero-section {
+        max-height: 700px;
+    }
+}

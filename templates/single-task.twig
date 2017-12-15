@@ -1,0 +1,82 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="task">
+    <div class="task__info">
+        <div class="task__title">
+            {{ post.title }}
+        </div>
+        <div class="task__description content">
+            <h3 class="task__info-title">Verkefnislýsing</h3>
+            <div class="content">
+                {{ post.task_description }}
+            </div>
+        </div>
+        <div class="task__objective">
+            <h3 class="task__info-title">Markmið</h3>
+            <div class="content">
+                {{ post.task_objectives }}
+            </div>
+        </div>
+        <div class="task__requirement">
+            <h3 class="task__info-title">Hæfni umsækjenda</h3>
+            <div class="content">
+                {{ post.task_requirements }}
+            </div>
+        </div>
+    </div>
+    <div class="task__needs">
+
+        <div class="task__request">
+            <div class="task__category-name">
+                <img src="{{ category_icon }}" alt="">
+                {{ post.terms( 'task_category' ) | join( ', ' ) }}
+            </div>
+
+            <div class="task__line">
+                <p class="task__request-title">Verk:&nbsp </p>
+                <p class="task__needs-answer">
+                    {{ post.terms( 'division' ) | join( ', ' ) }}
+                </p>
+            </div>
+
+            <div class="task__line">
+                <p class="task__request-title">Hópur:&nbsp </p>
+                <p class="task__needs-answer">
+                    {{ post.terms( 'skill' ) | join( ', ' ) }}
+                </p>
+            </div>
+        </div>
+
+        <div class="task__request task__border">
+            <div class="task__line">
+                <p class="task__request-title">Fjöldi sjálfboðaliða:&nbsp </p><p class="task__needs-answer">{{ post.volunteers_needed }}</p>
+            </div>
+            <div class="task__line">
+                <p class="task__request-title">Áætlaðar klukkustundir á viku:&nbsp </p><p class="task__needs-answer">{{ post.estimated_hoursweek }}</p>
+            </div>
+            <div class="task__line">
+                <p class="task__request-title">Áætlaður fjöldi vikna:&nbsp </p><p class="task__needs-answer">{{ post.estimated_duration }}</p>
+            </div>
+        </div>
+
+        <div class="task__request">
+            <div class="task__line">
+                <p class="task__request-title">Tungumálakunnátta:&nbsp </p>
+                <p class="task__needs-answer">{{ task_language }}</p>
+            </div>
+            <div class="task__line task__tablet-margin">
+                <p class="task__request-title">Tungumál verkefnis:&nbsp </p>
+
+                {% for lang_sk in language_skills %}
+                <p class="task__needs-answer">{{ lang_sk }},</p>
+                {% endfor %}
+
+            </div>
+        </div>
+        {% include 'apply-for-task-form.twig' %}
+    </div>
+</div>
+
+{% endblock %}

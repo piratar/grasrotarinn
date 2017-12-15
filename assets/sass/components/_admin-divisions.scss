@@ -1,0 +1,15 @@
+/*************************
+* Wp Admin division styles *
+*************************/
+
+// User list on Division taxonomy admin screens
+.user-list {
+
+    &__item {
+        cursor: pointer;
+
+        &.selected {
+            background-color: pink;
+        }
+    }
+}

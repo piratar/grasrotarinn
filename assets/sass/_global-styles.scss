@@ -1,0 +1,108 @@
+/*************************************
+* Body, html and other global styles *
+*************************************/
+
+// Default typography styles for the site
+body {
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+}
+
+// class for a page content site-wide for the purpose of WYSIWYG editor
+.content {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: left;
+
+    h1, h2, h3, h4, h5, h6 {
+        padding: 20px 0px;
+        font-weight: 700;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    em {
+        font-style: italic;
+    }
+    ul {
+        li {
+            list-style-type: circle;
+            line-height: 30px;
+            margin-left: 5%;
+        }
+    }
+    ol {
+        li {
+            list-style-type:decimal;
+            line-height: 30px;
+            margin-left: 5%;
+        }
+    }
+}
+
+// styles for hidden elements
+.hidden {
+    display: none;
+}
+
+// Prevent scroll
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+/**************************
+* Google ReCaptcha styles *
+**************************/
+.g-recaptcha {
+    margin-top: 25px;
+    transform: scale(0.85);
+    transform-origin: 0 0;
+
+    &.apply-recaptcha {
+        margin-top: 0;
+        margin-bottom: 25px;
+        transform: scale(0.8);
+    }
+}
+
+@include tablet() {
+    .g-recaptcha {
+        margin-top: 25px;
+        transform: scale(1);
+        transform-origin: 0 0;
+
+        &.apply-recaptcha {
+            margin-top: 0;
+            margin-bottom: 25px;
+            transform: scale(1);
+        }
+    }
+}

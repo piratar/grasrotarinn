@@ -1,0 +1,117 @@
+.filter-category {
+    flex: 0 0 100%;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $grey-border;
+
+    &__title {
+        @include h4();
+        margin-bottom: 40px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    &__parent-filter {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 0;
+        text-align: left;
+        font-weight: 700;
+        border: 0;
+        background: transparent;
+        outline: 0;
+
+        &:after {
+            content: "\f077";
+            position: absolute;
+            right: 0;
+            font-family: $font-awesome;
+            transition: 0.3s ease-out;
+            transform: rotate(0);
+        }
+
+        &-wrapper {
+            padding: 20px 0px;
+            border-bottom: 1px solid $grey-border;
+
+            &:nth-child(2) {
+                border-top: 1px solid $grey-border;
+            }
+
+        }
+
+        &.collapsed {
+
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+    } // __parent-filter
+
+    &--cat {
+
+        &__filters-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+        }
+    }
+}
+
+@include tablet() {
+
+    .filter-category {
+
+        &:not(.filter-category--cat) {
+            flex: 0 0 50%;
+            border-bottom: 0px;
+
+            &:nth-child(even) {
+                padding-right: 5%;
+                border-right: 1px solid $grey-border;
+            }
+
+            &:nth-child(odd) {
+                padding-left: 5%;
+            }
+        }
+
+        &--cat {
+
+            &__filters-wrapper {
+                justify-content: flex-start;
+            }
+        }
+
+    }
+}
+
+@include desktop() {
+
+    .filter-category {
+        &__title {
+            display: none;
+        }
+        &:not(.filter-category--cat) {
+            flex: 0 0 25%;
+
+            &:nth-child(even) {
+                padding-right: 3%;
+                padding-left: 3%;
+                border-right: 1px solid $grey-border;
+            }
+
+            &:nth-child(odd) {
+                padding-left: 3%;
+            }
+        }
+
+        &--cat {
+            flex: 0 0 50%;
+            padding-right: 3%;
+            border-right: 1px solid $grey-border;
+            border-bottom: 0px;
+        }
+    }
+}

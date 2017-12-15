@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="my-profile">
+    <div class="my-profile__wrapper">
+        <div class="my-profile__info">
+            <div class="my-profile__image">
+                    <!-- <img src="{{ current_user.profile_image }} " alt="User profile image"> -->
+                    <img src="{{ theme.path }}/assets/img/profile-pic.jpg" >
+            </div>
+            <div class="my-profile__main-info">
+                <div class="my-profile__name">
+                    {{ current_user.display_name }}
+                </div>
+                <div class="my-profile__email">
+                    <p class="my-profile__required">Netfang: &nbsp</p><p class="my-profile__answer">{{ current_user.user_email }} </p>
+                </div>
+                <div class="my-profile__phone">
+                    <p class="my-profile__required">Símanúmer: &nbsp</p><p class="my-profile__answer"> {{ current_user.phone_number }} </p>
+                </div>
+            </div>
+        </div>
+        <div class="my-profile__description">
+            <p class="my-profile__about-me-titile">Um mig</p>
+            <p class="my-profile__about-me content">
+                {{ current_user.description }}
+            </p>
+            <p class="my-profile__change-info"><a href="{{ site.url }}/my-profile?edit_user=1">Breyta upplýsingum</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
