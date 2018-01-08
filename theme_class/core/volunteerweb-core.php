@@ -850,7 +850,6 @@ class VolunteerWebCore extends TimberSite {
 
         // get request headers and extract origin fiedl from it for later use
         $headers = apache_request_headers();
-        $request_origin = $headers['Origin'];
         // get host info
         $host_url = get_bloginfo( 'url' );
 
@@ -871,7 +870,7 @@ class VolunteerWebCore extends TimberSite {
 
             $token = $this->JWT->decode( $auth, JWT_KEY, [ 'HS256' ] );
             // if request didn't come from volunteerweb throw error
-            if ( $token->iss !== $host_url || $request_origin !== $host_url ) {
+            if ( $token->iss !== $host_url ) {
                 $response['error'] = 'you are not allowed to do this';
                 return $response;
             }
