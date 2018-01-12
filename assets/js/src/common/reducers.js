@@ -87,7 +87,7 @@ export function form( state = {}, action ) {
 
         case USER_LOGOUT_SUCCESS:
 
-            return Object.assign( {}, state, { userLogging: false, successMessage: 'You are logged out', errorMessage: '', applyError: '' } );
+            return Object.assign( {}, state, { userLogging: false, successMessage: '', errorMessage: '', applyError: '' } );
 
         case USER_LOGOUT_FAIL:
 
@@ -112,7 +112,8 @@ export function form( state = {}, action ) {
                 state,
                 { showFormWrapper: !state.showFormWrapper,
                   showLoginForm: state.showFormWrapper ? false : state.showLoginForm,
-                  showRegisterForm: state.showFormWrapper ? false : state.showRegisterForm
+                  showRegisterForm: state.showFormWrapper ? false : state.showRegisterForm,
+                  successMessage: state.showFormWrapper ? '' : state.successMessage
                 }
             );
 

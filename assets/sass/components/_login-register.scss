@@ -10,8 +10,9 @@
 
     &__title {
         margin-bottom: 14px;
-        font-size: 24px;
         color: $purple;
+        font-size: 24px;
+        font-weight: bold;
     }
     &__form {
         display: flex;
@@ -30,7 +31,7 @@
         border-radius: 5px;
     }
     &__submit {
-        @include cta-green();
+        @include cta-purple();
         margin: 42px 0px 24px;
     }
     &__login-link {
@@ -84,5 +85,8 @@
         height: auto;
         width: auto;
         top: 50%;
+        &__title {
+
+        }
     }
 }

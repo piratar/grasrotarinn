@@ -4,7 +4,8 @@
     <div class="thank-you-message js-thank-you-message hidden">
         Thank you! You successfully applied for this task.
     </div>
-    <div class="js-form-fields hidden">
+    {% include 'loading-popup.twig' %}
+    <div class="task__form-fields js-form-fields hidden">
         <textarea class="task__why-me-textarea" name="whyme" id="" cols="30" rows="10"></textarea>
         <input type="number" name="task_id" value="{{ post.ID }}" hidden>
         <div id="recaptcha-apply" class="g-recaptcha apply-recaptcha"

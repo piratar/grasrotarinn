@@ -79,6 +79,7 @@
         margin-bottom: 12px;
     }
     &__why-me {
+        position: relative;
         display: flex;
         flex-flow: column;
         background-color: $task-background-grey;

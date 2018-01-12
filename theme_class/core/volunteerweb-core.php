@@ -622,7 +622,7 @@ class VolunteerWebCore extends TimberSite {
 
         // check if user is admin send them to proper login
         if ( user_can( $user->ID, 'administrator' ) ) {
-            $response['error'] = 'please use admin login <a href="' . wp_login_url() . '">Login</a>. Thank you';
+            $response['error'] = 'Please use admin login. Thank you';
 
             return $response;
         }
@@ -871,7 +871,7 @@ class VolunteerWebCore extends TimberSite {
             $token = $this->JWT->decode( $auth, JWT_KEY, [ 'HS256' ] );
             // if request didn't come from volunteerweb throw error
             if ( $token->iss !== $host_url ) {
-                $response['error'] = 'you are not allowed to do this';
+				$response['error'] = 'you are not allowed to do this.';
                 return $response;
             }
             // if token is older than 14 days, logout user and throw error

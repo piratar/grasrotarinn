@@ -1,0 +1,29 @@
+/****************
+* Loading popup *
+****************/
+
+.loading-popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white-transparent;
+    z-index: 100;
+
+    &--success {
+        background-color: $white;
+    }
+
+    &__loader {
+        @include centerXY();
+    }
+
+    &__success {
+        @include centerXY();
+        font-size: 18px;
+        font-weight: 700;
+        color: $green;
+    }
+}

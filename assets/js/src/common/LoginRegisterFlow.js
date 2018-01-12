@@ -90,23 +90,25 @@ class LoginRegisterFlow {
             this.$registerForm.fadeIn( 300 );
             this.$loginForm.hide();
         }
-        // if there is success or error message render it
-        if ( state.successMessage || state.errorMessage ) {
-            // if success message
-            if ( state.successMessage && state.showLoginForm ) {
-                this.$loginMessage.html( state.successMessage ).addClass( 'success' );
-            } else if ( state.successMessage && state.showRegisterForm ) {
-                this.$registerMessage.html( state.successMessage ).addClass( 'success' );
-            }
-            // if error message
-            if ( state.errorMessage && state.showLoginForm ) {
-                this.$loginMessage.html( state.errorMessage ).addClass( 'error' );
-            } else if ( state.errorMessage && state.showRegisterForm ) {
-                this.$registerMessage.html( state.errorMessage ).addClass( 'error' );
+
+        // if user login/register successful clear fields
+        if ( state.successMessage ) {
+            this.$loginForm.find( 'input:not([type=submit])' ).val( '' );
+            this.$registerForm.find( 'input:not([type=submit])' ).val( '' );
+        }
+
+        // if there is error message render it
+        if ( state.errorMessage ) {
+            // if it's login error
+            if ( state.showLoginForm ) {
+                this.$loginMessage.html( document.createTextNode( state.errorMessage ) ).addClass( 'error' );
+            // if it's register error
+            } else if ( state.showRegisterForm ) {
+                this.$registerMessage.html( document.createTextNode( state.errorMessage ) ).addClass( 'error' );
             }
         } else { // if there are no success or error message clean up message fields
-            this.$loginMessage.html( '' ).removeClass( 'success error' );
-            this.$registerMessage.html( '' ).removeClass( 'success error' );
+            this.$loginMessage.html( '' ).removeClass( 'error' );
+            this.$registerMessage.html( '' ).removeClass( 'error' );
         }
 
         // enable / disable login / register buttons depending on reCaptcha

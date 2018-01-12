@@ -12,7 +12,9 @@
     "test": "jest --watch"
   },
   "jest": {
-      "setupFiles": [ "<rootDir>/assets/js/src/test-files/test-env.js"]
+    "setupFiles": [
+      "<rootDir>/assets/js/src/test-files/test-env.js"
+    ]
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

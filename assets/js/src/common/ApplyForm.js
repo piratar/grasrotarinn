@@ -11,6 +11,7 @@ class ApplyForm {
         this.$formFields = $applyForm.find( '.js-form-fields' );
         this.$errorField = $applyForm.find( '.js-apply-error' );
         this.$signInInfoField = $applyForm.find( '.js-sign-in-info' );
+        this.$loader = $applyForm.find( '.js-loading-loader' ),
         this.taskId = parseInt($applyForm.find( 'input[name="task_id"]' ).val() );
 
         // bindings
@@ -57,16 +58,24 @@ class ApplyForm {
     render() {
         // get state
         const state = this.store.getState();
-        // if user is not logged in  or form is loading disable form submit
-        if ( !state.userInfo.id || state.form.isLoading || !state.form.successfulApplyRecaptcha ) {
+        // if user is not logged in or form is loading disable form submit // || !state.form.successfulApplyRecaptcha
+        if ( !state.userInfo.id ) {
             this.$submitButton.prop( 'disabled', 'disabled' );
             // if user is not logged in show log in message
             if ( !state.userInfo.id ) {
                 this.$signInInfoField.show().html( 'You have to be logged-in in order to apply for tasks. Please login or register. Thank you.' );
             }
+
         } else {
             this.$submitButton.removeProp( 'disabled' );
             this.$signInInfoField.hide();
+        }
+
+        // if user is applying show loading popup
+        if ( state.form.applyingForTask ) {
+            this.$loader.fadeIn( 300 );
+        } else {
+            this.$loader.fadeOut( 300 );
         }
         // if user is already applied for this task hide form and show thank you message
         if ( state.userInfo.appliedTasks && state.userInfo.appliedTasks.indexOf( this.taskId ) > -1 ) {

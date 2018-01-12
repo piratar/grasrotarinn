@@ -190,7 +190,7 @@ test( 'form reducer should handle USER_LOGOUT_SUCCESS', () => {
         showFormWrapper: false,
         showLoginForm: false,
         showRegisterForm: false,
-        successMessage: 'You are logged out',
+        successMessage: '',
         errorMessage: '',
         applyError: ''
     };
@@ -453,6 +453,76 @@ test( 'form reducer should handle APPLY_FOR_TASK_REQUEST', () => {
         errorMessage: '',
         applyError: '',
         applyingForTask: true
+    };
+
+    // assertions
+    expect( form( state, action ) ).toEqual( expectedState );
+});
+
+test( 'form reducers should handle APPLY_FOR_TASK_SUCCESS', () => {
+    // mocks
+    const state = {
+        userLogging: false,
+        userRegistering: false,
+        showFormWrapper: false,
+        showLoginForm: false,
+        showRegisterForm: false,
+        successMessage: '',
+        errorMessage: '',
+        applyError: '',
+        applyingForTask: true
+    };
+    const action = {
+        type: actions.APPLY_FOR_TASK_SUCCESS,
+
+    };
+
+    // expected data
+    const expectedState = {
+        userLogging: false,
+        userRegistering: false,
+        showFormWrapper: false,
+        showLoginForm: false,
+        showRegisterForm: false,
+        successMessage: '',
+        errorMessage: '',
+        applyError: '',
+        applyingForTask: false
+    };
+
+    // assertions
+    expect( form( state, action ) ).toEqual( expectedState );
+});
+
+test( 'form reducers should handle APPLY_FOR_TASK_FAIL', () => {
+    // mocks
+    const state = {
+        userLogging: false,
+        userRegistering: false,
+        showFormWrapper: false,
+        showLoginForm: false,
+        showRegisterForm: false,
+        successMessage: '',
+        errorMessage: '',
+        applyError: '',
+        applyingForTask: true
+    };
+    const action = {
+        type: actions.APPLY_FOR_TASK_FAIL,
+        message: 'apply failed'
+    };
+
+    // expected data
+    const expectedState = {
+        userLogging: false,
+        userRegistering: false,
+        showFormWrapper: false,
+        showLoginForm: false,
+        showRegisterForm: false,
+        successMessage: '',
+        errorMessage: '',
+        applyError: 'apply failed',
+        applyingForTask: false
     };
 
     // assertions
