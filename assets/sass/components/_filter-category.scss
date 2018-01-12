@@ -90,9 +90,6 @@
 @include desktop() {
 
     .filter-category {
-        &__title {
-            display: none;
-        }
         &:not(.filter-category--cat) {
             flex: 0 0 25%;
 
